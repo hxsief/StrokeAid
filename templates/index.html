@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stroke Prediction Form</title>
+  <link rel="stylesheet" href="static/fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="static/vendor/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="main">
+
+      <div class="container">
+          <div class="signup-content">
+              <div class="signup-img">
+                  <img src="static/images/form-img.png" alt="">
+              </div>
+              <div class="signup-form">
+                  <form method="POST" class="register-form" id="register-form" action="{{ url_for('predict')}}">
+                      <div class="form-row">
+                          <div class="form-group">
+                            <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="Gender">Gender</label>
+                                </div>                  
+                                  <div class="form-radio-group">            
+                                      <div class="form-radio-item">
+                                          <input type="radio" name="Gender" id="male" value="1" checked>
+                                          <label for="male">Male</label>
+                                          <span class="check"></span>
+                                      </div>
+                                      <div class="form-radio-item">
+                                        <input type="radio" name="Gender" id="female" value="0" >
+                                        <label for="female">Female</label>
+                                        <span class="check"></span>
+                                    </div>
+                                  </div>
+                            </div>
+                              <div class="form-input">
+                                  <label for="age" class="required" >Age</label>
+                                  <input type="number" name="Age" id="age" required />
+                              </div>
+                              <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="Hypertension">Ever had Hypertension?</label>
+                                </div>                  
+                                  <div class="form-radio-group">            
+                                      <div class="form-radio-item">
+                                          <input type="radio" name="Hypertension" id="hyperyes" value="1" checked>
+                                          <label for="hyperyes">Yes</label>
+                                          <span class="check"></span>
+                                      </div>
+                                      <div class="form-radio-item">
+                                        <input type="radio" name="Hypertension" id="hyperno" value="0" >
+                                        <label for="hyperno">No</label>
+                                        <span class="check"></span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="Heart">Ever had Heart Disease?</label>
+                                </div>                  
+                                  <div class="form-radio-group">            
+                                      <div class="form-radio-item">
+                                          <input type="radio" name="Heart" id="heartyes" value="1" checked>
+                                          <label for="heartyes">Yes</label>
+                                          <span class="check"></span>
+                                      </div>
+                                      <div class="form-radio-item">
+                                        <input type="radio" name="Heart" id="heartno" value="0" >
+                                        <label for="heartno">No</label>
+                                        <span class="check"></span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="Heart">Are you ever married?</label>
+                                </div>                  
+                                  <div class="form-radio-group">            
+                                      <div class="form-radio-item">
+                                          <input type="radio" name="Married" id="marriedyes" value="1" checked>
+                                          <label for="marriedyes">Yes</label>
+                                          <span class="check"></span>
+                                      </div>
+                                      <div class="form-radio-item">
+                                        <input type="radio" name="Married" id="marriedno" value="0" >
+                                        <label for="marriedno">No</label>
+                                        <span class="check"></span>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            
+                            <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="work">Work Type</label>
+                                </div>
+                                <div class="form-radio-group">            
+                                  <div class="form-radio-item">
+                                      <input type="radio" name="work" id="neverw" value="1" checked>
+                                      <label for="unknown">Never Worked</label>
+                                      <span class="check"></span>
+                                  </div>
+                                  <div class="form-radio-item">
+                                    <input type="radio" name="work" id="gov" value="0" >
+                                    <label for="gov">Government</label>
+                                    <span class="check"></span>
+                                </div>
+                                <div class="form-radio-item">
+                                    <input type="radio" name="work" id="priv" value="2" >
+                                    <label for="priv">Private</label>
+                                    <span class="check"></span>
+                                </div>
+                                <div class="form-radio-item">
+                                    <input type="radio" name="work" id="self" value="3" >
+                                    <label for="self">Self-Employed</label>
+                                    <span class="check"></span>
+                                </div>
+                                <div class="form-radio-item">
+                                    <input type="radio" name="work" id="child" value="4" >
+                                    <label for="child">Children</label>
+                                    <span class="check"></span>
+                                </div>
+                            </div>
+                              <div class="form-radio">
+                                  <div class="label-flex">
+                                      <label for="res">Residence Type</label>
+                                  </div>
+                                  <div class="form-radio-group">            
+                                    <div class="form-radio-item">
+                                        <input type="radio" name="res" id="rural" value="0" checked>
+                                        <label for="rural">Rural</label>
+                                        <span class="check"></span>
+                                    </div>
+                                    <div class="form-radio-item">
+                                      <input type="radio" name="res" id="urban" value="1" >
+                                      <label for="urban">Urban</label>
+                                      <span class="check"></span>
+                                  </div>
+                                  </div>
+                              </div>
+                              <div class="form-input">
+                                  <label for="glucose" class="required" >Average Glucose Level</label>
+                                  <input type="number" name="glucose" id="glucose" required />
+                              </div>
+                              <div class="form-input">
+                                  <label for="BMI" class="required" >Body Mass Index (BMI)</label>
+                                  <input type="number" name="BMI" id="BMI" required/>
+                              </div>
+                              <div class="form-radio">
+                                <div class="label-flex">
+                                    <label for="smoke">Smoking Status</label>
+                                </div>
+                                <div class="form-radio-group">            
+                                  <div class="form-radio-item">
+                                      <input type="radio" name="smoke" id="unknown" value="0" checked>
+                                      <label for="unknown">Unknown</label>
+                                      <span class="check"></span>
+                                  </div>
+                                  <div class="form-radio-item">
+                                    <input type="radio" name="smoke" id="never" value="2" >
+                                    <label for="never">Never Smoke</label>
+                                    <span class="check"></span>
+                                </div>
+                                <div class="form-radio-item">
+                                    <input type="radio" name="smoke" id="former" value="1" >
+                                    <label for="former">Formerly Smoke</label>
+                                    <span class="check"></span>
+                                </div>
+                                <div class="form-radio-item">
+                                    <input type="radio" name="smoke" id="smokes" value="3" >
+                                    <label for="smokes">Smokes</label>
+                                    <span class="check"></span>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div><br><br></div>
+                    <div class="form-submit">
+                        <input type="submit" value="Predict" class="submit" href="/" />
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+  </div>
+ </div>
+</body>
+</html>
